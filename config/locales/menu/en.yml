@@ -1,0 +1,10 @@
+en:
+  properties: Properties
+  rooms: Rooms
+  items: Items
+  log_out: Log Out
+  log_in: Log In
+  logged_in_as: Logged in as
+  account: My Account
+  about: About
+  bootstrap: Ah Bin Bootstrap is working

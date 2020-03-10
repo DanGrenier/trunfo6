@@ -1,0 +1,51 @@
+en:
+  no_rooms_setup: You do not have any rooms setup for %{property} 
+  click_to_select_rooms: Click on the type of rooms you have (select quantity when applicable)
+  room_created_success: Room created successfully
+  room_updated_success: Room updated successfully
+  room_deleted_success: Room deleted successfully
+  room_need_property: Please select a property
+  only_access_room_from_property: You cannot access this room
+  btn_create_rooms: Create Rooms
+  btn_new_room: New Room
+  new_room_title: New Room
+  edit_room_title: Edit Room
+  room_for_property: Rooms for %{property}
+  room_del_confirm: Are you sure you want to delete this room with ALL items?
+  tooltip_delete_room: Delete this room
+  tooltip_edit_room: Edit this room
+  tooltip_show_room: View this room
+  btn_save_room: Save Room
+  collection_default_select: Select a Room Type
+  room_picture: Room Pictures
+  room_items: Item(s)
+  #=====================================================
+  #ERROR MESSAGES FOR ACTIVERECORD MODELS
+  #=====================================================
+  activerecord:
+    errors:
+      models:
+        room:
+          attributes:
+            description:
+              blank: Please enter a room description
+              already_there: This room already exists
+            room_type_id:
+              blank: Please select a room type
+            room_type:
+              required: A room type must be assigned  
+            property_id:
+              blank: Please select a property  
+            property:
+              required: Please select a property  
+                
+  #=====================================================
+  #LABEL HELPERS FOR FORMS
+  #=====================================================        
+  helpers:
+    label:
+      room:
+        description: "Description"
+        room_type_id: "Room Type"
+                
+  

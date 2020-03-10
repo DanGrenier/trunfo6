@@ -1,0 +1,20 @@
+<ul class="navbar-nav ml-auto">
+  <li class = "nav-item">
+    <%=link_to (t :about) , about_path, class: 'nav-link'%>
+  </li>
+  <!-- If User is Logged In, we show the Sign Out button -->
+  <% if signed_in? %>
+    <li class="navbar-text" 
+        style = "padding-right: 10px; padding-left: 10px">
+      No property selected
+    </li>
+
+    <%= link_to "Sign Out", destroy_user_session_path,
+      method: :delete,
+      class: 'btn btn-trunfo navbar-btn' %>
+  <%end%>
+  <li class = "nav-item">
+    <%=link_to (t :about) , about_path, class: 'nav-link'%>
+  </li>
+
+</ul>

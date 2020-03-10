@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trunfo</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1"> 
+    <%= stylesheet_pack_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+    <link rel="shortcut icon" 
+      type="image/x-icon" 
+      href = <%=asset_pack_path "media/images/favicon.ico"%>>
+  </head>
+
+  <body data-controller="<%= controller_name %> <%= action_name %>">
+    <nav class = "navbar navbar-expand-md mb-4" role="navigation">
+      <div class = "container-fluid">
+        <!-- Home Button with Logo -->
+        <%= link_to root_path, class: "navbar-brand" do %>
+          <%=image_pack_tag("trunfo_transparent.png", alt:"Trunfo Large", class: "d-none d-lg-block  aign-middle") %>
+          <%=image_pack_tag("trunfo_logo.png", alt:"Trunfo Small", class: "d-lg-none d-inline-block aign-middle") %>
+        <%end%>
+        <button  class="navbar-toggler collapsed" type="button" data-toggle="collapse" data-target="#main-nav-collapse" aria-controls= "main-nav-collapse" aria-expanded="false" aria-label="Toggle navigation">
+          <i class = "fas fa-bars trunfo-main"> </i>
+          
+           
+        </button>
+        <%=render "shared/menubar"%>
+      </div>
+    </nav>
+    <div class = "container-fluid content">
+      <div class = "row">
+        <div class = "col-12">
+          <%flash.each do |name,msg| %>
+            <%unless name.to_s == 'timedout'%>
+              <div class='alert alert-<%="#{name}" %>'>
+                <a href ='#' class='close' data-dismiss='alert'>&#215;</a>
+                <%= content_tag :div, msg, :id => "flash_#{name}" if msg.is_a?(String) %>
+              </div>
+            <%end%>
+          <%end%>
+          <%flash.discard()%>
+        </div>
+      </div>
+      <%= yield %>
+    </div>
+  </body>
+</html>

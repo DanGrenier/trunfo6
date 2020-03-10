@@ -1,0 +1,10 @@
+<div class="navbar-collapse collapse " id="main-nav-collapse">
+  <!-- If User is Logged In -->
+  <% if signed_in? %> 
+      <%=render "shared/menu_user" %>
+  <%end%>
+
+  <!--SHOW THE SIGN OUT OR LOGIN LINKAT THE END -->
+  <%= render "shared/login_status_links" %>  
+  
+</div>

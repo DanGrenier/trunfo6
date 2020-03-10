@@ -1,0 +1,46 @@
+en:
+  property_saved_success: "Property created successfully"
+  property_updated_success: "Property updated successfully"
+  property_deleted_success: "Property, rooms and items deleted successfully"
+  add_property_button: Add Property
+  property_list_title: Select Property to Manage
+  property_list_no_properties: No Properties On File
+  edit_property_button: Edit
+  save_property_button: Save Property
+  manage_property_button: Manage
+  attached_picture: Attached Picture
+  property_new_title: New Property
+  property_edit_title: Edit Property
+  tooltip_edit_property: Edit this Property
+  tooltip_managing_property: Currently Managing
+  tooltip_select_to_manage: Manage this Property
+  tooltip_delete_property: Delete this Property
+  property_del_confirm: "Delete this Property with ALL Rooms/Items?"
+  #=====================================================
+  #ERROR MESSAGES FOR ACTIVERECORD MODELS
+  #=====================================================
+  activerecord:
+    errors:
+      models:
+        property:
+          attributes:
+            description:
+              blank: Please enter a property description
+            property_picture:
+              invalid_format: Picture needs to be .JPG or .PNG format
+                
+  #=====================================================
+  #LABEL HELPERS FOR FORMS
+  #=====================================================        
+  helpers:
+    label:
+      property:
+        description: "Description"
+        address: "Address"
+        city: "City"
+        state: "State"
+        zip: "Zip Code"
+        property_picture: "Picture"
+        select_new: "Select New"
+        remove: "Remove"
+        
