@@ -1,0 +1,18 @@
+<div class = "row">
+  <div class = "col-12">
+    <h2 class = "text-center trunfo-main">
+      <%= t :no_properties_setup%>
+  	</h2>
+    <h2 class = "text-center trunfo-main">
+      <%= t :click_to_create_property%>
+    </h2>
+  </div>
+</div>
+<br>
+<div class = "row">
+  <div class = "col-12 text-center">
+    <%=link_to (t :add_property_button), new_property_path,
+    data: {turbolinks: false},
+    class: "btn btn-trunfo"%>
+  </div>
+</div>

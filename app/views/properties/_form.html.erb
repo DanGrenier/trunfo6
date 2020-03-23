@@ -1,0 +1,68 @@
+  <div class = "form-row col-12">
+    <!-- Description -->
+    <div class = "form-group form-row col-12">
+      <%= f.label :description,
+      class: "col-12 col-lg-2 
+              col-form-label col-form-label-sm label-bold"%>
+      <div class = "col-12 col-lg-10">
+        <%= f.text_field :description, autofocus: true,
+        class: "form-control form-control-sm col"%>
+      </div>
+    </div>
+    
+    <!-- Address -->  	      
+    <div class = "form-group form-row col-12">
+   	  <%= f.label :address,
+          class: "col-12 col-lg-2 
+                  col-form-label col-form-label-sm label-bold"%>
+   	  <div class = "col-12 col-lg-10">
+   	    <%= f.text_field :address, 
+        class: "form-control form-control-sm col"%>
+   	  </div>
+    </div>
+  
+    <!-- Address2 -->	      
+    <div class = "form-group form-row col-12">
+      <div class = "col-12 col-lg-2 
+                    col-form-label col-form-label-sm label-bold">
+  	  </div>
+  	  <div class = "col-12 col-lg-10">
+  	    <%= f.text_field :address2, 
+        class: "form-control form-control-sm col"%>
+  	  </div>
+    </div>
+    
+    <!-- City -->	      
+    <div class = "form-group form-row col-12">
+   	  <%=f.label :city,  
+      class: "col-12 col-lg-2 
+              col-form-label col-form-label-sm label-bold"%>
+   	  <div class = "col-12 col-lg-10">
+   	    <%= f.text_field :city, 
+        class: "form-control form-control-sm col"%>
+      </div>
+    </div>
+    <div class = "form-group form-row col-12">
+    <!-- State & Zip -->
+    
+      <!-- State -->
+   	  <%=f.label :state,  
+        class: "col-12 col-lg-2 
+                col-form-label col-form-label-sm label-bold"%>
+  	  <div class = "col-3 col-md-2 col-lg-1">
+   	    <%= f.text_field :state,
+        class: "form-control form-control-sm col"%>
+      </div>
+   </div>
+   
+   <div class = "form-group form-row col-12">
+      <!-- Zip -->
+      <%=f.label :zip, "Zip", 
+       class: "col-12 col-lg-2 
+              col-form-label col-form-label-sm label-bold"%>
+      <div class = "col-5 col-md-3 col-lg-2">
+        <%=f.text_field :zip,
+        class: "form-control form-control-sm col"%>
+      </div>
+    </div>
+  </div>

@@ -4,10 +4,17 @@
   </li>
   <!-- If User is Logged In, we show the Sign Out button -->
   <% if signed_in? %>
-    <li class="navbar-text" 
+    <% if property_selected? %>
+      <li class = "navbar-text" 
+      style = "padding-right: 10px; padding-left: 10px">
+        <%=current_property.description%>
+      </li>
+    <%else%>
+      <li class="navbar-text" 
         style = "padding-right: 10px; padding-left: 10px">
-      No property selected
-    </li>
+        No property selected
+      </li>
+    <%end%>
 
     <%= link_to "Log Out", destroy_user_session_path,
       method: :delete,

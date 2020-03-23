@@ -126,6 +126,18 @@ a.trunfo-main:hover {
   border: 1px solid red !important;
 }
 
+.field_with_errors {
+  display: inline;
+}
+
+.field_with_errors input{
+  border: 1px solid red !important;
+}
+
+.field_with_errors select{
+  border: 1px solid red !important;
+}
+
 
 .room_detail_columns {
   border-style: solid;
@@ -137,6 +149,10 @@ a.trunfo-main:hover {
 .table > tbody > tr:first-child > td {
     border: none;}
 
+
+.table-properties > tbody > tr:hover {
+  background: $off-white;
+}
 /***************************************************/
 /* CSS for Error message formatting                */
 /***************************************************/

@@ -26,6 +26,7 @@ en:
       user:
         email: "Email"
         password: "Password"
+        new_password: "New Password"
         current_password: "Current Password"
         password_confirmation: "Password Confirmation"
   unauthorized_access_resource: "You are unauthorized to access this resource"

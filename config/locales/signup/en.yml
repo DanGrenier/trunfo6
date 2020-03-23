@@ -5,11 +5,11 @@ en:
   sign_up_confirm: Password Confirmation
   min_chars: "%{chars} characters minimum"
   log_in: Log In
-  cancel_account_text: Click Here to Cancel your Account
+  cancel_account_text: Click Here to Cancel
   cancel_confirm: Are you sure you want to cancel your account?
   unhappy_cancel_html: "Unhappy?<br>You can cancel your account by using the button below"
   leave_blank: Leave blank if you don't want to change it
-  need_pass_for_change: We need your current password to confirm the changes
+  need_pass_for_change: To confirm changes
   didnt_rec_confirm: Didn't receive confirmation instructions?
   user_update: Update Account
   cancel_account: Cancel Account

@@ -1,7 +1,8 @@
 en:
-  property_saved_success: "Property created successfully"
-  property_updated_success: "Property updated successfully"
-  property_deleted_success: "Property, rooms and items deleted successfully"
+  property_saved_success: Property created successfully
+  property_updated_success: Property updated successfully
+  property_deleted_success: Property, rooms and items deleted successfully
+  property_deleted_failure: Property could not be deleted
   add_property_button: Add Property
   property_list_title: Select Property to Manage
   property_list_no_properties: No Properties On File
@@ -15,7 +16,7 @@ en:
   tooltip_managing_property: Currently Managing
   tooltip_select_to_manage: Manage this Property
   tooltip_delete_property: Delete this Property
-  property_del_confirm: "Delete this Property with ALL Rooms/Items?"
+  property_del_confirm: Delete this Property with ALL Rooms/Items?
   #=====================================================
   #ERROR MESSAGES FOR ACTIVERECORD MODELS
   #=====================================================

@@ -9,7 +9,11 @@ Rails.application.routes.draw do
   get '/about', :to => "pages#about"
 
 
-  # Authenticated route to show specific Dashboard for users
+  resources :properties
+
+  get '/select_property' => "properties#select"
+  
+  # Authenticated route to show Dashboard as root when used signed
   authenticated :user do 
   	root to: 'pages#dashboard', as: "authenticated_user" 
   end
