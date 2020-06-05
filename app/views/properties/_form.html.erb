@@ -1,68 +1,127 @@
-  <div class = "form-row col-12">
-    <!-- Description -->
-    <div class = "form-group form-row col-12">
-      <%= f.label :description,
-      class: "col-12 col-lg-2 
-              col-form-label col-form-label-sm label-bold"%>
-      <div class = "col-12 col-lg-10">
-        <%= f.text_field :description, autofocus: true,
-        class: "form-control form-control-sm col"%>
-      </div>
-    </div>
+<div class = "card">
+  <!--Card Header -->
+  <div class = "card-header login_header">
+    <h2><%=title%></h2>
+  </div>  
+  <!-- Show errors if any -->
+  <div class = "card-body px-3">
     
-    <!-- Address -->  	      
-    <div class = "form-group form-row col-12">
-   	  <%= f.label :address,
+    <%= render :partial => "shared/error_handling",
+        :locals => {:the_object => property,
+                  :objectname => 'Property'} %>
+    <!-- Render the form -->
+    <%= form_for property,:html=>{:multipart => true} do |f|%>
+          
+      <div class = "form-row">
+        <!-- Description -->
+        <div class = "form-group form-row col-12">
+          <%= f.label :description,
+            class: "col-12 col-lg-2 
+                    col-form-label col-form-label-sm label-bold"%>
+          <div class = "col-12 col-lg-10">
+            <%= f.text_field :description, autofocus: true,
+            class: "form-control form-control-sm col"%>
+          </div>
+        </div>
+      
+        <!-- Address -->  	      
+        <div class = "form-group form-row col-12">
+          <%= f.label :address,
+            class: "col-12 col-lg-2 
+                   col-form-label col-form-label-sm label-bold"%>
+          <div class = "col-12 col-lg-10">
+            <%= f.text_field :address, 
+              class: "form-control form-control-sm col"%>
+          </div>
+        </div>
+    
+        <!-- Address2 -->	      
+        <div class = "form-group form-row col-12">
+          <div class = "col-12 col-lg-2 
+                      col-form-label col-form-label-sm label-bold">
+          </div>
+          <div class = "col-12 col-lg-10">
+           <%= f.text_field :address2, 
+           class: "form-control form-control-sm col"%>
+          </div>
+        </div>
+    
+        <!-- City -->	      
+        <div class = "form-group form-row col-12">
+          <%=f.label :city,  
           class: "col-12 col-lg-2 
-                  col-form-label col-form-label-sm label-bold"%>
-   	  <div class = "col-12 col-lg-10">
-   	    <%= f.text_field :address, 
-        class: "form-control form-control-sm col"%>
-   	  </div>
-    </div>
-  
-    <!-- Address2 -->	      
-    <div class = "form-group form-row col-12">
-      <div class = "col-12 col-lg-2 
-                    col-form-label col-form-label-sm label-bold">
-  	  </div>
-  	  <div class = "col-12 col-lg-10">
-  	    <%= f.text_field :address2, 
-        class: "form-control form-control-sm col"%>
-  	  </div>
-    </div>
-    
-    <!-- City -->	      
-    <div class = "form-group form-row col-12">
-   	  <%=f.label :city,  
-      class: "col-12 col-lg-2 
-              col-form-label col-form-label-sm label-bold"%>
-   	  <div class = "col-12 col-lg-10">
-   	    <%= f.text_field :city, 
-        class: "form-control form-control-sm col"%>
-      </div>
-    </div>
-    <div class = "form-group form-row col-12">
-    <!-- State & Zip -->
-    
-      <!-- State -->
-   	  <%=f.label :state,  
-        class: "col-12 col-lg-2 
-                col-form-label col-form-label-sm label-bold"%>
-  	  <div class = "col-3 col-md-2 col-lg-1">
-   	    <%= f.text_field :state,
-        class: "form-control form-control-sm col"%>
-      </div>
-   </div>
-   
-   <div class = "form-group form-row col-12">
-      <!-- Zip -->
-      <%=f.label :zip, "Zip", 
-       class: "col-12 col-lg-2 
-              col-form-label col-form-label-sm label-bold"%>
-      <div class = "col-5 col-md-3 col-lg-2">
-        <%=f.text_field :zip,
-        class: "form-control form-control-sm col"%>
+               col-form-label col-form-label-sm label-bold"%>
+          <div class = "col-12 col-lg-10">
+            <%= f.text_field :city, 
+            class: "form-control form-control-sm col"%>
+          </div>
+        </div>
+        
+        <div class = "form-group form-row col-12">
+         <!-- State -->
+          <%=f.label :state,  
+            class: "col-12 col-lg-2 
+                   col-form-label col-form-label-sm label-bold"%>
+          <div class = "col-3 col-md-2 col-lg-1">
+            <%= f.text_field :state,
+            class: "form-control form-control-sm col"%>
+          </div>
+        </div>
+     
+        <div class = "form-group form-row col-12">
+          <!-- Zip -->
+          <%=f.label :zip, "Zip", 
+            class: "col-12 col-lg-2 
+                   col-form-label col-form-label-sm label-bold"%>
+          <div class = "col-5 col-md-3 col-lg-2">
+            <%=f.text_field :zip,
+            class: "form-control form-control-sm col"%>
+          </div>
+        </div>
+        
+        <div class = "form-group form-row col-12">
+        <!-- Select Picture -->
+          <%=f.label :property_picture  , 
+         class: "col-12 col-lg-2 col-form-label col-form-label-sm label-bold"%>
+        
+         <div class = "col-5 col-md-3 col-lg-2">
+          <%= f.file_field :property_picture,
+          accept: 'image/*'%>
+        
+        </div>
       </div>
     </div>
   </div>
+  <%if property.property_picture.attached? && property.property_picture.persisted? %>
+    <!-- Show Footer with Current Picture for Reference -->
+  <div class = "card-footer px-0">
+    <div class = "form-group row">
+      <h5 class = "col-12 card-title text-center">
+        <%= t :attached_picture%>
+      </h5>
+    </div>
+    <div class = "form-group form-row">
+      <div class = "col-12 text-center">
+        <%=image_tag property.thumbnail%>
+      </div>
+    </div>
+    <div class = "form-group form-row  justify-content-center">
+    
+        <%=f.label :remove_picture, class: "col-form-label col-form-label-sm label-bold"%>
+            
+        <%=f.check_box :remove_picture, 
+        class: "col-lg-1 col-md-2 col-sm-2 form-control form-control-sm"%>
+      
+    </div>
+  </div>  
+  <%end%>
+
+</div>
+<br>
+<!-- Save button -->  
+<div class="col-8 col-md-4 col-lg-3 col-xl-3"
+    style="padding-left: 0px">
+  <%= f.submit (t :save_property_button),
+     class: 'btn btn-trunfo btn-block' %>
+</div>
+<%end%>

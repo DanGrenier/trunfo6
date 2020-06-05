@@ -20,5 +20,7 @@ module Trunfo6
      config.i18n.default_locale = :en
 
      config.exceptions_app = self.routes
+
+     
   end
 end

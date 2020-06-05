@@ -41,7 +41,7 @@ RSpec.configure do |config|
   # If you're not using ActiveRecord, or you'd prefer not to run each of your
   # examples within a transaction, remove the following line or assign false
   # instead of true.
-  config.use_transactional_fixtures = false
+  config.use_transactional_fixtures = true
 
   #Include Factory Both Methods so we don't have to pre-pend FactoryBot
   config.include FactoryBot::Syntax::Methods
@@ -86,6 +86,9 @@ RSpec.configure do |config|
     url: ENV.fetch('SELENIUM_URL'),
     desired_capabilities: Selenium::WebDriver::Remote::Capabilities.firefox
   )
+  Capybara.configure do |config|
+    config.app_host = "http://127.0.0.1:39089"
+  end
 end
 
 FactoryBot::SyntaxRunner.class_eval do

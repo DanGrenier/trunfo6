@@ -12,11 +12,17 @@
             "table-active": ""%>	
           <!-- Show picture -->
         	<tr class="<%=cust_class%>">
-            <!-- Show FontAwesome pic for now -->
-            <td class="align-middle">
-              <i class="fas fa-home fa-3x trunfo-main">
-              </i>
-            </td> 
+            <!-- Show Picture or otherwise show fontawesome icon -->
+            <%if property.property_picture.attached?%>
+              <td class="align-middle">
+                <%= image_tag(property.thumbnail, class: "property_picture", id: "property_thumbnail")%>
+              </td>
+            <%else%>
+              <td class="align-middle">
+                <i class="fas fa-home fa-3x trunfo-main">
+                </i>
+              </td> 
+              <%end%>
 
             <!-- Description -->
             <td class = "align-middle"> 

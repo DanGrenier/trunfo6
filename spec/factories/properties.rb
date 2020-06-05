@@ -7,6 +7,10 @@ FactoryBot.define do
     state {"GA"}
     zip {"30606"}
     association :user
+
+    trait :with_picture do 
+      property_picture {fixture_file_upload(Rails.root.join('spec','factories','files','home.jpg'),'image/jpg')}
+    end
     
   end
 
@@ -18,6 +22,10 @@ FactoryBot.define do
     b.state {"GA"}
     b.zip {"30622"}
     b.association :user
+
+    trait :with_picture do 
+      b.property_picture {fixture_file_upload(Rails.root.join('spec','factories','files','cabin.jpg'),'image/jpg')}
+    end
 
 
   end

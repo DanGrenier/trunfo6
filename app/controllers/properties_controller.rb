@@ -60,7 +60,8 @@ class PropertiesController < ApplicationController
     def property_params
       params.require(:property)
       .permit(:description, :address, :address2,
-      	      :city, :state, :zip)
+      	      :city, :state, :zip,
+              :property_picture, :remove_picture )
     end
 
     def assign_property

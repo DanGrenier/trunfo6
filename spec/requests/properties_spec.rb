@@ -6,6 +6,7 @@ RSpec.describe "Properties", :type => :request do
   let!(:user2) {create(:user, email: 'user@example.com')}
   let!(:property) {create(:property, user: user)}
   let!(:property2) {create(:property, user: user2)}
+  
 
   #Tests to access the different enpoints while user not signed in
   describe 'User Not Signed In' do 
@@ -110,12 +111,13 @@ RSpec.describe "Properties", :type => :request do
       end
     end
     describe "PATCH #update" do 
-      
+            
       context "with valid attributes" do 
    
         subject {patch property_path property, params: {property: attributes_for(:property, description: "New description") }}
 
         it "updates the record in the database" do 
+          
           subject
           expect(property.reload.description).to eq "New description"
         end
@@ -125,6 +127,8 @@ RSpec.describe "Properties", :type => :request do
           expect(response).to redirect_to properties_path
         end
       end
+
+       
 
       context "with invalid attributes" do
         
@@ -145,18 +149,26 @@ RSpec.describe "Properties", :type => :request do
     describe 'POST #create' do 
       
       context "with valid attributes" do
-        
-        subject {post properties_path,params: {property: FactoryBot.attributes_for(:property, user: user) }} 
- 
+        subject {post properties_path,params: {property: FactoryBot.attributes_for(:property, :with_picture, user: user) }}
         it "creates a Property in the database" do 
           expect {subject}.to change {Property.count}.by(1)
-        end  
+        end
+
+        it "attaches a picture" do
+          expect {subject}.to change(ActiveStorage::Attachment, :count).by(1)
+        end
+
+        it "attaches the proper picture" do 
+          subject
+          expect(Property.last.property_picture.filename.to_s).to eq("home.jpg")
+        end
 
         it "redirects to properties index" do 
           subject
           expect(response).to redirect_to properties_path
         end
       end
+
 
       context "with invalid attributes" do
         

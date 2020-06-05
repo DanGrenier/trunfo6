@@ -22,7 +22,7 @@ gem 'devise'
 
 gem 'will_paginate', '3.2.1'
 
-
+gem 'image_processing'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use Active Model has_secure_password

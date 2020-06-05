@@ -1,26 +1,7 @@
 <div class = "row">
-  <div class = "col-8 offset-2">
-  	<div class = "card">
-  	  <div class = "card-header login_header">
-  	    <h2><%= t :property_new_title%></h2>
-  	  </div>	
-      <!-- Show errors if any -->
-  	  <div class = "card-body px-3">
-        <%= render :partial => "shared/error_handling",
-        :locals => {:the_object => @property,
-                    :objectname => 'Property'} %>
-        <%= form_for @property,:html=>{:multipart => true} do |f|%>            
-        <!-- Render the form -->
-  	    <%= render :partial => 'form',
-        :locals => {:f => f}%>
-      </div>
-    </div>
-    <br>
-    <!-- Save button -->  
-    <div class="col-4" style="padding-left: 0px">
-      <%= f.submit (t :save_property_button),
-          class: 'btn btn-trunfo btn-block' %>
-    </div>
-    <% end %>
+  <div class = "col-12 col-md-8 col-lg-8 col-sm-8
+  offset-lg-2 offset-sm-2 offset-md-2">
+    <%=render :partial => 'form',
+      :locals => {:property => @property, :title => (t :property_edit_title) }%>
   </div>
 </div>    

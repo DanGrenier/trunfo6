@@ -9,7 +9,7 @@ en:
   edit_property_button: Edit
   save_property_button: Save Property
   manage_property_button: Manage
-  attached_picture: Attached Picture
+  attached_picture: Property Picture
   property_new_title: New Property
   property_edit_title: Edit Property
   tooltip_edit_property: Edit this Property
@@ -43,5 +43,5 @@ en:
         zip: "Zip Code"
         property_picture: "Picture"
         select_new: "Select New"
-        remove: "Remove"
+        remove_picture: "Remove"
         

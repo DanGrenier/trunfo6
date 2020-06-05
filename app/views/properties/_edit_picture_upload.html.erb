@@ -1,0 +1,50 @@
+ <div class = "form-row col-12">
+<!-- If no current pictures attached -->
+<%if !property.property_picture.attached? %>
+  <div class = "form-group form-row col-12">
+    <!-- Select Picture -->
+    <%=f.label :property_picture  , 
+    class: "col-12 col-lg-2 col-form-label col-form-label-sm label-bold"%>
+      
+    <div class = "col-sm-4">
+      <%= f.file_field :property_picture,
+      accept: 'image/*'%>
+    </div>
+  </div>  
+<%else%>
+<!-- If we already have a picture -->
+  <div class = "form-group row">
+    <!-- Select a New Picture -->
+    <p class = "form-label col-sm-2">
+      <%=t('helpers.label.property.select_new')%>
+    </p>
+    <div class = "col-sm-4">
+      <%= f.file_field :property_picture,
+      accept: 'image/*'%>
+    </div>
+  </div>
+  <!-- Show Footer with Current Picture for Reference -->
+  <div class = "card-footer px-0">
+    <div class = "form-group row">
+      <h5 class = "col-sm-12 card-title text-center">
+        <%= t :attached_picture%>
+      </h5>
+    </div>
+    <div class = "form-group row">
+      <p class = "form-label col-sm-2">
+        <%= t('helpers.label.property.property_picture')%>
+      </p>
+      <div class = "col-sm-4">
+        <%=image_tag(property.thumbnail)%>
+      </div>
+ 
+      <p class ="form-label col-sm-2">
+        <%= t('helpers.label.property.remove')%>
+      </p>
+      <%=f.check_box :remove_picture, 
+      class: "form-control  move-left col-sm-1"%>
+    </div>
+  </div>  
+<%end%>
+</div>
+ 
